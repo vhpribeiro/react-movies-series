@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavBar } from './components'
+import { NavBar } from '../../components'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function App() {
+function Home() {
   return (
     <div>
       <NavBar/>
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

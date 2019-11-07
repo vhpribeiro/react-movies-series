@@ -1,17 +1,27 @@
-import React from 'react';
-import { NavBar, SearchForm } from '../../components'
+import React, { Component } from 'react';
+import { NavBar, SearchForm, Spinner } from '../../components'
+import { connect } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+class Home extends Component {
+  render(){
 
-function Home() {
-  return (
-    <div>
-      <NavBar/>
-      <div className="container">
-        <SearchForm/>
+    const { loading } = this.props;
+
+    return (
+      <div>
+        <NavBar/>
+        <div className="container">
+          <SearchForm/>
+          {loading ? <Spinner /> : <MoviesContainer/>}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  loading: state.movies.loading
+})
+
+export default connect(mapStateToProps)(Home);

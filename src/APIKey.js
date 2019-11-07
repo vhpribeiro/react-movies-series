@@ -1,3 +1,1 @@
-export const APIKey = {
-    APIKey: 'b78343e1'
-}
+export default 'b78343e1';

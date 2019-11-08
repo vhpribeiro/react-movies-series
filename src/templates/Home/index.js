@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavBar, SearchForm, Spinner } from '../../components'
+import { NavBar, SearchForm, Spinner, MoviesContainer } from '../../components'
 import { connect } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -6,13 +6,14 @@ export default (state = initialState, action) => {
         case SEARCH_MOVIE:
             return {
                 ...state,
-                text: action.payload,
+                text: action.text,
                 loading: false
             }
         case FETCH_MOVIES:
             return {
                 ...state,
-                movies: action.payload
+                movies: action.movies,
+                loading: false
             }
         default:
             return state

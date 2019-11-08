@@ -1,3 +1,5 @@
-export { default as NavBar } from './Navbar';
-export { default as SearchForm } from './SearchForm';
-export { default as Spinner } from './Spinner';
+export { default as NavBar } from './Navbar'
+export { default as SearchForm } from './SearchForm'
+export { default as Spinner } from './Spinner'
+export { default as MoviesContainer } from './MoviesContainer'
+export { default as MovieCard } from './MovieCard'

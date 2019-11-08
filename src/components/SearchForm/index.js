@@ -8,7 +8,6 @@ class SearchForm extends Component {
   }
 
   onSubmit = event => {
-    console.log('Teste de chamada')
     event.preventDefault();
     this.props.fetchMovies(this.props.text);
   }
@@ -22,11 +21,11 @@ class SearchForm extends Component {
 					</h1>
 					<form id="searchForm" onSubmit={this.onSubmit}>
 							<input
-                type="text" 
-                className="form-control"
-                name="searchText"
-                placeholder="Search Movies, TV Series ..."
-                onChange={this.onChange}
+								type="text" 
+								className="form-control"
+								name="searchText"
+								placeholder="Search Movies, TV Series ..."
+								onChange={this.onChange}
 							/>
 							<button type="submit" className="btn btn-primary btn-bg mt-3">
 							Search

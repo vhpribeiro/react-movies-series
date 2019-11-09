@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchMovie } from '../../actions/searchActions'
+import { fetchMovie, setLoading } from '../../actions/searchActions'
 import { Link } from 'react-router-dom'
 
 
@@ -8,6 +8,7 @@ class Movie extends Component {
 
     componentDidMount(){
         this.props.fetchMovie(this.props.match.params.id);
+        this.props.setLoading();
     }
 
     render() {
@@ -76,4 +77,4 @@ const mapStateToProps = state => ({
   movie: state.movies.movie
 });
 
-export default connect(mapStateToProps, { fetchMovie })(Movie);
+export default connect(mapStateToProps, { fetchMovie, setLoading })(Movie);

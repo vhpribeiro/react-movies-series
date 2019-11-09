@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchMovie, setLoading } from '../../actions/searchActions'
 import { Link } from 'react-router-dom'
+import { Spinner, NavBar } from '../../components'
+import './style.css';
 
 
 class Movie extends Component {
@@ -12,10 +14,11 @@ class Movie extends Component {
     }
 
     render() {
-        let movie = this.props.movie != null ? this.props.movie : {};
+        const { loading } = this.props;
+        const movie = this.props.movie != null ? this.props.movie : {};
 
-        return (
-            <div className="container">
+        let movieInfo = (
+            <div className="container movie__margin-top">
                 <div className="row">
                     <div className="col-md-4 card card-body">
                         <img src={movie.Poster} className="thumbnail" alt="Poster" />
@@ -67,6 +70,14 @@ class Movie extends Component {
                         </div>
                     </div>
                 </div>
+        </div>)
+
+        let content = loading ? <Spinner/> : movieInfo;
+
+        return (
+            <div>
+                <NavBar/>
+                {content}
             </div>
         )
     }

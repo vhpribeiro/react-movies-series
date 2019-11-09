@@ -1,4 +1,4 @@
-import { SEARCH_MOVIE, FETCH_MOVIES } from '../actions/types'
+import { SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE } from '../actions/types'
 import initialState from './initialState'
 
 export default (state = initialState, action) => {
@@ -12,8 +12,12 @@ export default (state = initialState, action) => {
         case FETCH_MOVIES:
             return {
                 ...state,
-                movies: action.movies,
-                loading: false
+                movies: action.movies
+            }
+        case FETCH_MOVIE:
+            return{
+                ...state,
+                movie: action.movie
             }
         default:
             return state
